@@ -9,9 +9,25 @@ import Error from "./Pages/Error";
 import Navbar from "./Components/Navbar";
 function App() {
   return (
-    <div>
-      <h2>app component</h2>
-    </div>
+    <>
+      <Router>
+        <Navbar />
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route path="/About">
+            <About />
+          </Route>
+          <Route path="/cocktail/:id">
+            <SingleCocktail />
+          </Route>
+          <Route path="*">
+            <Error />
+          </Route>
+        </Switch>
+      </Router>
+    </>
   );
 }
 
