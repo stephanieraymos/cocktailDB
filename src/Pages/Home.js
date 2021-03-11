@@ -1,6 +1,6 @@
 import React from "react";
-import CocktailList from "../components/CocktailList";
-import SearchForm from "../components/SearchForm";
+import CocktailList from "../Components/CocktailList";
+import SearchForm from "../Components/SearchForm";
 
 const Home = () => {
   return (
