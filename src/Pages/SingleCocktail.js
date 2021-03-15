@@ -104,7 +104,7 @@ const SingleCocktail = () => {
           <p>
             <span className="drink-data">Ingredients: </span>
             {ingredients.map((item, index) => {
-              return item ? <span key={index}>{item}</span> : null;
+              return item ? <span key={index}>{item},</span> : null;
             })}
           </p>
         </div>
