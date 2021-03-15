@@ -63,7 +63,20 @@ const SingleCocktail = () => {
   if (!cocktail) {
     return <h2 className="section-title">No cocktail to display</h2>;
   }
-  return <div></div>;
+  const {
+    name,
+    img,
+    category,
+    info,
+    glass,
+    instructions,
+    ingredients,
+  } = cocktail;
+  return (
+    <section>
+      <h2 className="section-title">{name}</h2>
+    </section>
+  );
 };
 
 export default SingleCocktail;
