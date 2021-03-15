@@ -5,9 +5,14 @@ const SearchForm = () => {
   const { setSearchTerm } = useGlobalContext();
   const searchValue = React.useRef("");
 
+  React.useEffect(() => {
+    searchValue.current.focus();
+  }, []);
+
   const searchCocktail = () => {
     setSearchTerm(searchValue.current.value);
   };
+  
   return (
     <>
       <section className="section search">
@@ -23,7 +28,6 @@ const SearchForm = () => {
           </div>
         </form>
       </section>
-      <h2>search form component</h2>
     </>
   );
 };
