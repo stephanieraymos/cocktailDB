@@ -14,9 +14,45 @@ const SingleCocktail = () => {
       try {
         const response = await fetch(`${url}${id}`);
         const data = await response.json();
+        if (data.drinks) {
+          const {
+            strDrink: name,
+            strDrinkThumb: img,
+            strAlcoholic: info,
+            strCategory: category,
+            strGlass: glass,
+            strInstructions: instructions,
+            strIngredient1,
+            strIngredient2,
+            strIngredient3,
+            strIngredient4,
+            strIngredient5,
+          } = data.drinks[0];
+          const ingredients = [
+            strIngredient1,
+            strIngredient2,
+            strIngredient3,
+            strIngredient4,
+            strIngredient5,
+          ];
+          const newCocktail = {
+            name,
+            img,
+            info,
+            category,
+            glass,
+            instructions,
+            ingredients,
+          };
+          setCocktail(newCocktail);
+        } else {
+          setCocktail(null);
+        }
+        setLoading(false);
         console.log(data);
       } catch (err) {
         console.log(err);
+        setLoading(false);
       }
     }
     getCocktail();
